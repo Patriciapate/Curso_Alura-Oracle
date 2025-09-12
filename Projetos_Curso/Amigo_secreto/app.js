@@ -13,6 +13,11 @@ function adicionarAmigo() {
         return;
     }
 
+    if (nomesAmigos.includes(nome)) {
+        alert("Este nome já está na lista, digite outro!");
+        return;
+    }
+
     nomesAmigos.push(nome);
     atualizarLista();
     input.value = "";
@@ -45,4 +50,5 @@ let amigoSorteado = nomesAmigos[indiceSorteado];
 
 let nomeSorteado = document.getElementById('resultado');
 nomeSorteado.innerHTML = `<li> O amigo secreto sorteado é: <strong>${amigoSorteado}</strong></li>`;
+
 }
